@@ -152,6 +152,13 @@
             /* 背景をほんのりオレンジに */
         }
 
+        /* 押せない（受付終了の）タブのデザイン */
+        .tab-button:disabled {
+            color: #cccccc;
+            cursor: not-allowed;
+            background: none;
+        }
+
         /* 今開いている（アクティブな）タブのデザイン */
         .tab-button.active {
             color: var(--primary-color);
@@ -350,7 +357,7 @@
         <ul>
             <!-- onclick="switchTab('名前')" で、後述するJavaScriptを呼び出して画面を切り替えます -->
             <li><button class="tab-button active" onclick="switchTab('home')" id="btn-home">ホーム</button></li>
-            <li><button class="tab-button" onclick="switchTab('apply')" id="btn-apply">大会概要</button></li>
+            <li><button class="tab-button" onclick="switchTab('apply')" id="btn-apply" disabled>申し込み（受付終了）</button></li>
             <li><button class="tab-button" onclick="switchTab('contact')" id="btn-contact">お問い合わせ</button></li>
             <li><button class="tab-button" onclick="switchTab('others')" id="btn-others">その他</button></li>
         </ul>
