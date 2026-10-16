@@ -320,6 +320,16 @@
             }
         }
         /* ↑↑↑ここから上を追加↑↑↑ */
+
+        /* 大会終了のお知らせ */
+        .notice {
+            background-color: #fff3e8;
+            border-left: 5px solid var(--primary-color);
+            padding: 15px 20px;
+            margin-bottom: 25px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
     </style>
 </head>
 
@@ -340,7 +350,7 @@
         <ul>
             <!-- onclick="switchTab('名前')" で、後述するJavaScriptを呼び出して画面を切り替えます -->
             <li><button class="tab-button active" onclick="switchTab('home')" id="btn-home">ホーム</button></li>
-            <li><button class="tab-button" onclick="switchTab('apply')" id="btn-apply">申し込み</button></li>
+            <li><button class="tab-button" onclick="switchTab('apply')" id="btn-apply">大会概要</button></li>
             <li><button class="tab-button" onclick="switchTab('contact')" id="btn-contact">お問い合わせ</button></li>
             <li><button class="tab-button" onclick="switchTab('others')" id="btn-others">その他</button></li>
         </ul>
@@ -354,6 +364,7 @@
         <!-- 1. ホームセクション (※初期状態で表示されるため class="active" がついています) -->
         <section id="home" class="tab-content active">
             <!-- 🏀 ここに表示したい文字を書いてください -->
+            <div class="notice">大会は終了いたしました。ご参加・ご声援いただいた皆様、誠にありがとうございました。</div>
             <h2>あの日終われなかった試合を、熱狂を、もう一度。</h2>
             <p>未完の青春に、決着。</p>
             <p>あの頃、一つのボールを追いかけ、本気で戦っていた仲間たち。そして、しのぎを削ったライバルたち。もう一度あの時と同じ熱量で、コートで激しくぶつかり合える場所を作りました。川口出身のプレイヤーが集い、あの日失った「真剣勝負」を取り戻すためのリベンジマッチです。</p>
@@ -362,32 +373,20 @@
 
         <!-- 2. 申し込みセクション -->
         <section id="apply" class="tab-content">
-            <h2>大会へのエントリー</h2>
-            <p>こちらからお申し込みください。</p>
-            <p>大会への参加をご希望の方は、募集要項をお読みの上、以下の専用フォームよりお申し込みをお願いいたします。</p>
+            <h2>エントリー受付は終了しました</h2>
+            <p>大会は終了いたしました。たくさんのお申し込み、誠にありがとうございました。</p>
             <p>
-                募集要覧<br>
+                開催概要<br>
                 📍開催場所：戸田市スポーツセンター<br>
                 ⏰開催日時：７月５日（土） 17:00~21:00<br>
-                ✅応募条件：川口市の中学校男子バスケットボール部OB 05、06、07世代（2020年6月時点で川口市内の中学校に在籍している者）<br>
-                🏀試合形式：未定<br>
-                🏆優勝賞品：焼肉食べ放題、入浴券、スポーツタオルなどを予定（内容を変更する場合がございます）<br>
-                （注）参加費として一人2500円頂戴いたします。<br>
+                ✅参加資格：川口市の中学校男子バスケットボール部OB 05、06、07世代（2020年6月時点で川口市内の中学校に在籍している者）<br>
             </p>
-            <p>皆様の熱い挑戦をお待ちしております！</p>
-
-            <!-- 🏀【リンクの貼り方】 href="ここのURLを書き換える" と、リンク先が変わります -->
-            <!-- 例: href="https://forms.gle/..." (GoogleフォームのURLなど) -->
-            <!-- ※ target="_blank" という指定は「別のタブ（新しい画面）でリンク先を開く」という意味です -->
-            <a href="https://forms.gle/pkLugchDqseTNSkn7" class="apply-btn" target="_blank">
-                申し込みフォームはこちら
-            </a>
         </section>
 
         <!-- 3. 問い合わせセクション -->
         <section id="contact" class="tab-content">
             <h2>お問い合わせ</h2>
-            <p>申し込みに関するご不明な点や、大会に関するご質問がございましたら、以下の連絡先までお気軽にお問い合わせください。</p>
+            <p>大会に関するご質問などがございましたら、以下の連絡先までお気軽にお問い合わせください。</p>
 
             <div class="contact-info">
                 <!-- 🏀 ココに記載されている連絡先情報を、自身のものに書き換えてください -->
