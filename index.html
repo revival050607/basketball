@@ -2,471 +2,167 @@
 <html lang="ja">
 
 <head>
-    <!-- 文字化けを防ぐための設定です -->
     <meta charset="UTF-8">
-    <!-- スマホやタブレットでも綺麗に表示させるための設定（レスポンシブ対応）です -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- 🏀【タイトルの変更箇所 1】ブラウザのタブに表示される名前を変えます -->
-    <title>リバイバルカップ</title>
+    <!-- 公開停止中は検索エンジンに載らないようにする設定です -->
+    <meta name="robots" content="noindex, nofollow">
+    <title>サイト公開一時停止のお知らせ | 川口市リバイバルカップ</title>
 
     <style>
-        /* =======================================================
-           🏀【色の変更箇所】ここでサイト全体のテーマカラーを変更できます
-           カラーコード（#から始まる6桁の英数字）を書き換えてください。
-           （例：#ff0000 なら赤色になります）
-        ======================================================= */
         :root {
-            --primary-color: #FF6B00;
-            /* メインカラー（バスケットボールをイメージしたオレンジ） */
-            --primary-hover: #E65A00;
-            /* マウスを乗せた時の少し暗いオレンジ */
-            --dark-color: #1A1A24;
-            /* 見出しなどに使う引き締まった濃い色（ネイビー系ダーク） */
-            --bg-color: #F4F7F6;
-            /* 全体的な背景色（目に優しい薄いグレー） */
-            --text-color: #333333;
-            /* 普通の文字の色（真っ黒より少し薄い、読みやすいグレー） */
+            --navy: #1C2A3A;
+            --text-color: #2B2B2B;
+            --sub-text: #5F6670;
+            --border: #D5D9DE;
+            --bg-color: #F2F3F5;
             --white: #FFFFFF;
-            /* コンテンツエリアの背景など（白） */
         }
 
-        /* -------------------------------------------------------
-           基本設定： 全体の余白をなくし、フォントを見やすく設定します
-        ------------------------------------------------------- */
         * {
             box-sizing: border-box;
-            /* 要素の幅計算をシンプルにする魔法の設定 */
             margin: 0;
             padding: 0;
         }
 
         body {
-            /* 文字のフォント（書体）を指定します。読みやすいモダンなゴシック体を並べています */
-            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            font-family: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Yu Gothic', Meiryo, sans-serif;
             background-color: var(--bg-color);
-            /* 背景色を適用 */
             color: var(--text-color);
-            /* 文字色を適用 */
-            line-height: 1.6;
-            /* 行間を少し広くして読みやすくします */
+            line-height: 1.9;
         }
 
-        /* -------------------------------------------------------
-           ヘッダー（一番上のタイトル部分）のデザイン
-        ------------------------------------------------------- */
         header {
-            background-color: var(--dark-color);
-            /* ヘッダーの背景色 */
+            background-color: var(--navy);
             color: var(--white);
-            /* ヘッダーの文字色 */
+            padding: 18px 16px;
             text-align: center;
-            /* 文字を中央揃えに */
-            padding: 20px 10px;
-            /* 上下20px、左右10pxの余白 */
-
-            /* スマホでスクロールした時にヘッダーを上部に固定したい場合は、
-               以下の3行の先頭にあるコメント記号を消してください */
-            /* position: sticky; */
-            /* top: 0; */
-            /* z-index: 100; */
-        }
-
-        header h1 {
-            font-size: 20px;
-            /* タイトルの文字サイズ（スマホを考慮して少し小さめに） */
-            letter-spacing: 2px;
-            /* 文字と文字の隙間を少し広げてスタイリッシュに */
-        }
-
-        /* PCなどの広い画面の時はタイトルの文字を大きくします */
-        @media (min-width: 768px) {
-            header h1 {
-                font-size: 30px;
-            }
-        }
-
-        /* -------------------------------------------------------
-           ナビゲーションメニュー（4つのボタン）のデザイン
-        ------------------------------------------------------- */
-        nav {
-            background-color: var(--white);
-            /* メニュー部分の背景は白 */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            /* メニューの下にうっすらと影を落とし、立体感を出します */
-
-            /* メニューも上部に固定したい場合は、以下の3行のコメントアウトを消してください 
-               （※ヘッダーも同時に固定する必要があります） */
-            /* position: sticky; */
-            /* top: 68px; /* ヘッダーの高さに合わせてここの数字を調整してください */
-            /* z-index: 99; */
-        }
-
-        nav ul {
-            display: flex;
-            /* ボタンを横並びにする設定 */
-            list-style: none;
-            /* ボタンの左についてしまう点（・）を消す */
-            max-width: 800px;
-            /* メニューの最大幅 */
-            margin: 0 auto;
-            /* 画面の中央に配置 */
-        }
-
-        nav li {
-            flex: 1;
-            /* 4つのボタンの幅を等しくする */
-            text-align: center;
-            /* 文字を中央に */
-        }
-
-        /* メニューのボタンのデザイン */
-        .tab-button {
-            width: 100%;
-            /* 親要素の幅いっぱいに広げる */
-            background: none;
-            /* デフォルトの背景を消す */
-            border: none;
-            /* デフォルトの枠線を消す */
-            padding: 15px 5px;
-            /* 上下左右の余白 */
             font-size: 15px;
-            /* 文字サイズ */
-            font-weight: bold;
-            /* 文字を太く */
-            color: #888888;
-            /* 押されていない時の文字色（グレー） */
-            cursor: pointer;
-            /* マウスを乗せた時に指のマークにする */
-            transition: all 0.3s ease;
-            /* ホバー時などの色の変化を0.3秒かけてフワッとさせる（躍動感） */
-            border-bottom: 3px solid transparent;
-            /* 下線の準備（最初は透明にしておく） */
+            letter-spacing: 1px;
         }
 
-        /* 🏀【ホバーエフェクト】 メニューのボタンにマウスを乗せた時のデザイン */
-        .tab-button:hover {
-            color: var(--primary-color);
-            /* 文字をオレンジに */
-            background-color: #fff9f5;
-            /* 背景をほんのりオレンジに */
-        }
-
-        /* 押せない（受付終了の）タブのデザイン */
-        .tab-button:disabled {
-            color: #cccccc;
-            cursor: not-allowed;
-            background: none;
-        }
-
-        /* 今開いている（アクティブな）タブのデザイン */
-        .tab-button.active {
-            color: var(--primary-color);
-            /* 選ばれているタブの文字はオレンジ */
-            border-bottom: 3px solid var(--primary-color);
-            /* 下線をオレンジにする */
-        }
-
-        /* スマホなどの狭い画面向けのメニュー調整 */
-        @media (max-width: 600px) {
-            .tab-button {
-                font-size: 13px;
-                /* 少し文字を小さくする */
-                padding: 12px 2px;
-            }
-        }
-
-        /* -------------------------------------------------------
-           メインコンテンツ（中身の表示部分）のデザイン
-        ------------------------------------------------------- */
         main {
-            max-width: 800px;
-            /* PCで見ても横に広がりすぎないように最大幅を設定 */
-            margin: 40px auto;
-            /* 上下40pxの余白をあけ、左右は中央揃え */
-            padding: 0 20px;
-            /* スマホで見た時に文字が端に引っ付かないように左右に余白 */
-            min-height: 50vh;
-            /* 最低でも画面の半分の高さは確保する */
+            max-width: 760px;
+            margin: 48px auto;
+            padding: 0 16px;
         }
 
-        /* セクション（各ページの内容）の共通デザイン */
-        .tab-content {
-            display: none;
-            /* ★最初はすべて非表示にしておく（JavaScriptで切り替えます） */
+        .notice {
             background-color: var(--white);
-            /* 背景は白 */
-            padding: 40px 30px;
-            /* 内側の余白を広めにとり、清潔感を出す */
-            border-radius: 8px;
-            /* 箱の角を少し丸くする */
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            /* ふんわりとした影をつける */
-            animation: fadeIn 0.4s;
-            /* 切り替わった時にフワッと表示されるアニメーション */
+            border: 1px solid var(--border);
+            border-top: 4px solid var(--navy);
+            padding: 40px 36px;
         }
 
-        /* JavaScriptでアクティブ（表示状態）にされたセクションだけを表示する */
-        .tab-content.active {
-            display: block;
-        }
-
-        /* フワッと表示させるアニメーションの定義 */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* ページ内の見出しのデザイン */
-        .tab-content h2 {
-            color: var(--dark-color);
-            font-size: 24px;
-            margin-bottom: 20px;
-            /* 見出しの下に余白 */
-            padding-bottom: 10px;
-            /* 下線との隙間 */
-            border-bottom: 2px solid #eeeeee;
-            /* 薄いグレーの下線 */
-        }
-
-        .tab-content p {
-            margin-bottom: 20px;
-            /* 段落の下に余白 */
-            font-size: 16px;
-        }
-
-        /* -------------------------------------------------------
-           専用パーツのデザイン： 申し込みボタンなど
-        ------------------------------------------------------- */
-
-        /* 申し込みを促す目立つボタン */
-        .apply-btn {
-            display: block;
-            /* 縦に積むブロック要素にする */
-            width: 100%;
-            max-width: 300px;
-            /* 最大幅 */
-            margin: 30px auto 0;
-            /* 上に30pxの余白をあけ、左右は中央に配置 */
-            padding: 15px 20px;
-            background-color: var(--primary-color);
-            /* オレンジの背景 */
-            color: var(--white);
-            /* 白文字 */
+        .notice h1 {
+            font-size: 22px;
+            color: var(--navy);
             text-align: center;
-            /* 文字を中央に */
-            font-size: 18px;
-            /* 文字を少し大きく */
-            font-weight: bold;
-            /* 字を太く */
-            text-decoration: none;
-            /* リンク特有の下線を消す */
-            border-radius: 50px;
-            /* ボタンの両端を丸くする */
-            box-shadow: 0 4px 15px rgba(255, 107, 0, 0.4);
-            /* オレンジ色の光るような影 */
-            transition: all 0.3s ease;
-            /* ホバー時の変化をなめらかに */
+            padding-bottom: 20px;
+            margin-bottom: 28px;
+            border-bottom: 1px solid var(--border);
         }
 
-        /* 申し込みボタンにマウスを乗せた時（ホバー時） */
-        .apply-btn:hover {
-            background-color: var(--primary-hover);
-            /* 少し暗いオレンジに */
-            transform: translateY(-3px);
-            /* 少し上に浮く躍動感 */
-            box-shadow: 0 6px 20px rgba(255, 107, 0, 0.6);
-            /* 影を濃く広げる */
+        .date {
+            text-align: right;
+            font-size: 14px;
+            color: var(--sub-text);
+            margin-bottom: 24px;
         }
 
-        /* 問い合わせ先のボックスデザイン */
-        .contact-info {
-            background-color: #f9f9f9;
-            /* 薄いグレーの背景 */
-            padding: 20px;
-            border-left: 5px solid var(--primary-color);
-            /* 左にオレンジの線を入れるアクセント */
-            margin-top: 20px;
-            border-radius: 4px;
+        .notice p {
+            font-size: 15px;
+            margin-bottom: 20px;
         }
 
-        /* -------------------------------------------------------
-           フッター（一番下の部分）
-        ------------------------------------------------------- */
+        .notice h2 {
+            font-size: 16px;
+            color: var(--navy);
+            margin: 32px 0 12px;
+            padding-left: 10px;
+            border-left: 3px solid var(--navy);
+        }
+
+        .notice ul {
+            margin: 0 0 20px 1.5em;
+            font-size: 15px;
+        }
+
+        .contact {
+            margin-top: 32px;
+            padding: 20px 24px;
+            background-color: var(--bg-color);
+            border: 1px solid var(--border);
+            font-size: 14px;
+        }
+
+        .contact p {
+            margin-bottom: 4px;
+            font-size: 14px;
+        }
+
         footer {
             text-align: center;
-            padding: 20px 0;
-            color: #888888;
-            font-size: 14px;
-            margin-top: 40px;
-        }
-        /* ↓↓↓ここから下を追加↓↓↓ */
-        /* 🏀 追加：背景画像の設定 */
-        .home-hero-image {
-            width: 100%;
-            height: 300px;
-            background-image: url('main-visual.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            padding: 24px 0 32px;
+            color: var(--sub-text);
+            font-size: 13px;
         }
 
         @media (max-width: 600px) {
-            .home-hero-image {
-                height: 200px;
+            main {
+                margin: 24px auto;
             }
-        }
-        /* ↑↑↑ここから上を追加↑↑↑ */
 
-        /* 大会終了のお知らせ */
-        .notice {
-            background-color: #fff3e8;
-            border-left: 5px solid var(--primary-color);
-            padding: 15px 20px;
-            margin-bottom: 25px;
-            border-radius: 4px;
-            font-weight: bold;
+            .notice {
+                padding: 28px 20px;
+            }
+
+            .notice h1 {
+                font-size: 19px;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <!-- ==========================================
-         ヘッダー（画面上部）
-    =========================================== -->
-    <header>
-        <!-- 🏀【タイトルの変更箇所 2】画面の一番上に表示される文字を変えます -->
-        <h1>川口市リバイバルカップ</h1>
-    </header>
+    <header>川口市リバイバルカップ</header>
 
-    <!-- ==========================================
-         ナビゲーションメニュー（タブ）
-    =========================================== -->
-    <nav>
-        <ul>
-            <!-- onclick="switchTab('名前')" で、後述するJavaScriptを呼び出して画面を切り替えます -->
-            <li><button class="tab-button active" onclick="switchTab('home')" id="btn-home">ホーム</button></li>
-            <li><button class="tab-button" onclick="switchTab('apply')" id="btn-apply" disabled>申し込み（受付終了）</button></li>
-            <li><button class="tab-button" onclick="switchTab('contact')" id="btn-contact">お問い合わせ</button></li>
-            <li><button class="tab-button" onclick="switchTab('others')" id="btn-others">その他</button></li>
-        </ul>
-    </nav>
-
-    <!-- ==========================================
-         メインコンテンツ（各ページの中身）
-    =========================================== -->
     <main>
+        <div class="notice">
+            <h1>サイト公開一時停止のお知らせ</h1>
 
-        <!-- 1. ホームセクション (※初期状態で表示されるため class="active" がついています) -->
-        <section id="home" class="tab-content active">
-            <!-- 🏀 ここに表示したい文字を書いてください -->
-            <div class="notice">大会は終了いたしました。ご参加・ご声援いただいた皆様、誠にありがとうございました。</div>
-            <h2>あの日終われなかった試合を、熱狂を、もう一度。</h2>
-            <p>未完の青春に、決着。</p>
-            <p>あの頃、一つのボールを追いかけ、本気で戦っていた仲間たち。そして、しのぎを削ったライバルたち。もう一度あの時と同じ熱量で、コートで激しくぶつかり合える場所を作りました。川口出身のプレイヤーが集い、あの日失った「真剣勝負」を取り戻すためのリベンジマッチです。</p>
-            <div class="home-hero-image"></div>
-        </section>
+            <p class="date">2026年11月10日</p>
 
-        <!-- 2. 申し込みセクション -->
-        <section id="apply" class="tab-content">
-            <h2>エントリー受付は終了しました</h2>
-            <p>大会は終了いたしました。たくさんのお申し込み、誠にありがとうございました。</p>
-            <p>
-                開催概要<br>
-                📍開催場所：戸田市スポーツセンター<br>
-                ⏰開催日時：７月５日（土） 17:00~21:00<br>
-                ✅参加資格：川口市の中学校男子バスケットボール部OB 05、06、07世代（2020年6月時点で川口市内の中学校に在籍している者）<br>
-            </p>
-        </section>
+            <p>平素より川口市リバイバルカップ公式サイトをご覧いただき、誠にありがとうございます。</p>
 
-        <!-- 3. 問い合わせセクション -->
-        <section id="contact" class="tab-content">
-            <h2>お問い合わせ</h2>
-            <p>大会に関するご質問などがございましたら、以下の連絡先までお気軽にお問い合わせください。</p>
+            <p>昨今、国内外の企業・団体を標的としたサイバー攻撃が増加・高度化しており、ウェブサイトにおける情報セキュリティ対策の重要性が一層高まっております。</p>
 
-            <div class="contact-info">
-                <!-- 🏀 ココに記載されている連絡先情報を、自身のものに書き換えてください -->
-                <p><strong>大会運営</strong></p>
-                <p>メールアドレス： revival.050607@gmail.com</p>
-           <!--     <p>電話番号： 000-0000-0000 （受付時間：平日 10:00〜18:00）</p> -->
+            <p>こうした社会情勢を踏まえ、当サイトでは、皆様に安心してご利用いただける環境を確保するため、セキュリティ体制の強化を目的としたシステムの点検および改修を実施しております。これに伴い、作業期間中はサイトの公開を一時的に停止させていただきます。</p>
+
+            <h2>主な実施内容</h2>
+            <ul>
+                <li>情報セキュリティ対策の全般的な見直し</li>
+                <li>外部サービスとの連携機能の点検</li>
+                <li>個人情報の取り扱いに関する管理体制の再確認</li>
+            </ul>
+
+            <h2>公開再開の時期</h2>
+            <p>準備が整い次第、改めてお知らせいたします。</p>
+
+            <p>ご利用の皆様にはご不便をおかけいたしますが、何卒ご理解賜りますようお願い申し上げます。</p>
+
+            <div class="contact">
+                <p><strong>お問い合わせ先</strong></p>
+                <p>川口市リバイバルカップ 大会運営</p>
+                <p>メールアドレス：revival.050607@gmail.com</p>
             </div>
-        </section>
-
-        <!-- 4. その他セクション（今後の拡張用） -->
-        <section id="others" class="tab-content">
-            <h2>その他のお知らせ</h2>
-            <!-- 🏀 今後、ルールやスケジュール表、会場へのアクセス案内などを載せたい時にここを使います -->
-            <p>その他の情報を逐次追加していきます。</p>
-        </section>
-
+        </div>
     </main>
 
-    <!-- フッター（コピーライトなど。一番下） -->
     <footer>
-        <!-- 🏀【タイトルの変更箇所 3】 必要に応じて一番下の名前も変えてください -->
         <p>&copy; 2026 川口市リバイバルカップ All Rights Reserved.</p>
     </footer>
 
-
-    <!-- ==========================================
-         JavaScript（画面を切り替える裏側の仕組み）
-    =========================================== -->
-    <script>
-        /**
-         * 🏀【初心者向け解説】 ここはJavaScript（プログラム）が書かれている場所です！
-         * 
-         * switchTab（スイッチタブ）という機能を作って用意しています。
-         * メニューのボタンが押された時、この機能が実行されます。
-         * 
-         * やっていることは以下の2ステップだけです。
-         * 1. いったん、すべてのセクションやボタンから「表示中(active)」という状態をリセットする。
-         * 2. 今回クリックされたボタンと、それに対応するセクションにだけ「表示中(active)」をつける。
-         */
-        function switchTab(targetId) {
-
-            // ① 【中身の切り替え】
-            // class="tab-content" が付いているすべてのセクション（箱）を回収します
-            const contents = document.querySelectorAll('.tab-content');
-
-            // 回収したすべてのセクションから、'active' というクラス（表示させる目印）を外して非表示にします
-            contents.forEach(function (content) {
-                content.classList.remove('active');
-            });
-
-            // 今回表示したいセクション（例：'home'や'apply'など）を取り出し、'active' をつけて表示状態にします
-            const targetContent = document.getElementById(targetId);
-            if (targetContent) {
-                targetContent.classList.add('active');
-            }
-
-
-            // ② 【ボタンのデザイン切り替え】
-            // class="tab-button" が付いているすべてのボタンを回収します
-            const buttons = document.querySelectorAll('.tab-button');
-
-            // すべてのボタンから 'active' を外して、選択されていない時のグレーに戻します
-            buttons.forEach(function (button) {
-                button.classList.remove('active');
-            });
-
-            // 今回クリックされたボタン（例：id="btn-home" など）にだけ 'active' をつけて、文字を下線をオレンジにします
-            const targetButton = document.getElementById('btn-' + targetId);
-            if (targetButton) {
-                targetButton.classList.add('active');
-            }
-        }
-    </script>
 </body>
 
 </html>
